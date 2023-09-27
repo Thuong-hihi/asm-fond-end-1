@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="mt-[50px] w-full" > 
+      <app-banner></app-banner>
+    </div>
+    <div class=" flex pt-[100px] ml-[100px]" 
+    alt="Ảnh" 
+    (mouseenter)="enlargeImage()" 
+       (mouseleave)="resetImageSize()"
+       [style.transform]="isImageEnlarged ? 'scale(1.2)' : 'scale(1)'">
+       <p>
+      <h3 class="w-[200px] mt-[100px]">
+        Dầu gội bưởi không sunlfate
+      </h3>
+      <img class="w-[400px] mx-[60px]" src="assets/img/goi.webp" >
+       <p class="w-[400px] h-[100px] text-gray-500 mt-[60px]">
+        Sản phẩm sử dụng công thức làm sạch dịu nhẹ không sulfate, kết hợp với dưỡng chất từ tinh dầu bưởi Việt Nam truyền thống và các hoạt chất tốt cho chân tóc và da đầu như vitamin B5, xylishine, các acid amin. Sau khi gội đầu bằng dầu gội bưởi không sulfate, bạn sẽ cảm nhận ngay mái tóc mềm mại, chắc khoẻ và da đầu nhẹ tênh nhưng vẫn đủ ẩm để nuôi dưỡng từng sợi tóc.
+       </p>
+    </div> 

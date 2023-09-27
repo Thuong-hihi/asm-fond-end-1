@@ -1,0 +1,54 @@
+<div class="container">
+    <h2>Quản lý sản phẩm</h2>
+   
+    <button class="btn btn-primary ms-2" [routerLink]="['/admin/add']">Add Product</button>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                
+                <th>Tên sản phẩm</th>
+                <th>Ảnh</th>
+                <th>Giá sản phẩm</th>
+                
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr
+                *ngFor="
+                    let product of products 
+                    index as i
+                "
+            >
+                <td width="20" class="text-center">{{ i + 1 }}</td>
+                <td width="180">{{ product.name }}</td>
+                <td width="440">
+                    
+                    <img
+                     [src]="product.images"
+                        alt="{{ product.name }}"
+                        width="250"
+                        height="250"
+                    />
+                </td>
+                
+               
+                <td width="100">
+                    {{ product.price | currency : " " : "symbol" : "1.3-3" }} VND
+                </td>
+                
+                <td width="150">
+                    <button
+                        class="btn btn-danger"
+                        (click)="removeProduct(product.id!)"
+                    >
+                        Xóa
+                    </button>
+                    <button class="btn btn-primary ms-2" [routerLink]="['/admin/update',product.id]">Sửa</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
