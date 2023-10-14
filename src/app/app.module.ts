@@ -25,6 +25,11 @@ import { ListComponent } from './admin/list/list.component';
 import { ClientLayoutComponent } from '../app/layout/client-layout/client-layout.component';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 
+import { ListAccountComponent } from './account/list-account/list-account.component';
+import { AddAccountComponent } from './account/add-account/add-account.component';
+import { UpdateAccountComponent } from './account/update-account/update-account.component';
+
+
 
 @NgModule({
   declarations: [
@@ -45,6 +50,11 @@ import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.compone
     ListComponent,
     ClientLayoutComponent,
     AdminLayoutComponent,
+
+    ListAccountComponent,
+     AddAccountComponent,
+     UpdateAccountComponent
+
   ],
   imports: [
     BrowserModule,

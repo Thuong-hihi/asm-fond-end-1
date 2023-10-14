@@ -13,14 +13,17 @@ import { AddComponent } from './admin/add/add.component';
 import { UpdateComponent } from './admin/update/update.component';
 import { ClientLayoutComponent } from './layout/client-layout/client-layout.component';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
+import { ListAccountComponent } from './account/list-account/list-account.component';
+import { AddAccountComponent } from './account/add-account/add-account.component';
+import { UpdateAccountComponent } from './account/update-account/update-account.component';
+
 const routes: Routes = [
   {
     path: "", component: ClientLayoutComponent, children: [
-      {path: 'products' , component:ProductComponent},
       {path: '' , component:HomeComponent},
+      {path: 'products' , component:ProductComponent},
       {path: 'signin', component:SigninComponent},
       {path: 'signup', component:SignupComponent},
-     
       {path: 'content', component:ContentComponent},
       { path: 'product-detail/:id', component: ProductDetailComponent },
     ]
@@ -29,9 +32,20 @@ const routes: Routes = [
     path: "admin", component: AdminLayoutComponent, children: [
       {path: '', component:ListComponent},
       {path: 'add' ,component:AddComponent},
-      {path: 'update/:id', component:UpdateComponent}
+      {path: 'update/:id', component:UpdateComponent},
+      {path:'account/list', component: ListAccountComponent},
+      {path:'account/add', component: AddAccountComponent},
+      {path:'account/update/:id', component: UpdateAccountComponent},
+    
     ]
-  }
+  },
+  // {
+  //   path:"account" ,component :AccountLayoutComponent,children:[
+  //     {path: '', component:ListComponent},
+  //     {path: 'add' ,component:AddComponent},
+  //     {path: 'update/:id', component:UpdateComponent},
+  //   ]
+  // }
 ];
 
 @NgModule({

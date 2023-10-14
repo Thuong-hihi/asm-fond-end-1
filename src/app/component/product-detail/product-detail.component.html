@@ -4,12 +4,13 @@
     <h2>Product Detail</h2>
     <div class="product-detail">
       <div class="product-image">
-        <h3>name{{ product.name }}</h3>
-        <img [src]="product.images" [alt]="product.name" />
+        <h3>name {{ product?.name }}</h3>
+        <img [src]="product?.img" [alt]="product?.name" />
       </div>
       <div class="product-info">
       
-        <p>Price: {{ product.price | currency: ' ' }}VND</p>
+        <p>Price: {{ product?.price | currency: ' ' }}VND</p>
+        <p>Desc: {{ product?.desc }}</p>
         
         <!-- Các thông tin khác về sản phẩm -->
         

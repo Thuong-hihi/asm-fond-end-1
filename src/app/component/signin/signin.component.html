@@ -71,20 +71,22 @@
             </p>
           </div>
   
-          <form action="#" class="mt-8 grid grid-cols-6 gap-6">
+          <form action="#" class="mt-8 grid grid-cols-6 gap-6"  [formGroup]="userForm" (submit)="handleSignin()">
             <div class="col-span-6 sm:col-span-3">
               <label
                 for="Name"
                 class="block text-sm font-medium text-gray-700"
               >
-                First Name
+                 Name
               </label>
   
               <input
+              formControlName="name"
                 type="text"
                 id="name"
                 name="name"
                 class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+               
               />
             </div>
   
@@ -99,6 +101,7 @@
                 id="Email"
                 name="email"
                 class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                formControlName="email"
               />
             </div>
   
@@ -115,6 +118,7 @@
                 id="Password"
                 name="password"
                 class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                formControlName="password"
               />
             </div>
   
@@ -141,14 +145,14 @@
   
             <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
               <button
-                class="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
+                class="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-slate-400 hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
               >
             Đăng Nhập
               </button>
   
               <p class="mt-4 text-sm text-gray-500 sm:mt-0">
                 Bạn chưa có tài khoản đăng ký 
-                <a [routerLink]="['/signup']" class="text-gray-700 underline">Tại đây</a>.
+                <a routerLink="/signup" class="text-gray-700 underline">Tại đây</a>.
               </p>
             </div>
           </form>
