@@ -16,6 +16,7 @@ import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.compone
 import { ListAccountComponent } from './account/list-account/list-account.component';
 import { AddAccountComponent } from './account/add-account/add-account.component';
 import { UpdateAccountComponent } from './account/update-account/update-account.component';
+import { adminGuard } from './guard/admin.guard';
 
 const routes: Routes = [
   {
@@ -29,8 +30,8 @@ const routes: Routes = [
     ]
   },
   {
-    path: "admin", component: AdminLayoutComponent, children: [
-      {path: '', component:ListComponent},
+    path: "admin", component: AdminLayoutComponent, canActivate: [adminGuard] ,children: [
+      {path: '', component:ListComponent },
       {path: 'add' ,component:AddComponent},
       {path: 'update/:id', component:UpdateComponent},
       {path:'account/list', component: ListAccountComponent},
@@ -39,13 +40,7 @@ const routes: Routes = [
     
     ]
   },
-  // {
-  //   path:"account" ,component :AccountLayoutComponent,children:[
-  //     {path: '', component:ListComponent},
-  //     {path: 'add' ,component:AddComponent},
-  //     {path: 'update/:id', component:UpdateComponent},
-  //   ]
-  // }
+
 ];
 
 @NgModule({

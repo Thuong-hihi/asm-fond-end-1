@@ -12,51 +12,25 @@
             <tr>
                 <th>#</th>
                 
-                <th>Tên sản phẩm</th>
-                <th>Ảnh</th>
+                <th>Tên Tài khoản</th>
+                <th>Email</th>
               
-                <th>Des</th>
-                <th>Giá sản phẩm</th>
+                <th>Mật khẩu</th>
+                <th>Role</th>
                 <th>Action</th>
             </tr>
         </thead>
-        <!-- <tbody>
+        <tbody>
             <tr
                 *ngFor="
                     let user of users
                     index as i
                 "
             >
-                <td width="20" class="text-center">{{ i + 1 }}</td>
-                <td width="180">{{ users.name }}</td>
-                <td width="440">
-                    
-                    <img
-                     [src]="users.img"
-                        alt="{{users .name }}"
-                        width="250"
-                        height="250"
-                    />
-                </td>
-                
-                <td width="300">
-                    {{ users.desc }}
-                </td>
-                <td width="200">
-                    {{ users.price | currency : " " : "symbol" : "1.3-3" }} VND
-                </td>
-                
-                <td width="150">
-                    <button
-                        class="btn btn-danger"
-                        (click)="removeProduct(users._id!)"
-                    >
-                        Xóa
-                    </button>
-                    <button class="btn btn-primary ms-2" routerLink="update/{{users._id}}">Sửa</button>
-                </td>
+            <td width="20" class="text-center">{{ i + 1 }}</td>
+            <td width="180">{{ user.name }}</td>
             </tr>
-        </tbody> -->
+        </tbody>
     </table>
     <div class="w-[1400px] ml-[-50px]">
     </div>

@@ -20,6 +20,11 @@ import { HttpClient } from '@angular/common/http';
     getAll():Observable<any>{
       return this.http.get<any>(`${this.API_URL}`);
     }
+    isAuthenticated() {
+      return JSON.parse(localStorage.getItem('userInfo') || '{}');
+      // '{accessToken, user}'
+      // '{}'
+    }
     
   }
   

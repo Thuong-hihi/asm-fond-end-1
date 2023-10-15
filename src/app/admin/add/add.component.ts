@@ -18,7 +18,7 @@ export class AddComponent {
       Validators.minLength(4)
     ]],
     price: ['', [Validators.required]],
-    desc: ['', [Validators.required]],
+    desc: ['', [Validators.required ,Validators.minLength(3)]],
     img: ['', [Validators.required]],
     
   });

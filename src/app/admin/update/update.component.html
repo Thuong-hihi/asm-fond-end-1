@@ -24,10 +24,8 @@
               class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
               placeholder="Enter name"
             />
-            <span *ngIf="productForm.get('name')?.hasError('required') && productForm.get('name')?.touched" class="text-red-500">
-              Name không được bỏ trống!
-            </span>
-  
+            <span class="text-red-500" *ngIf="productForm.get('name')?.hasError('required') && productForm.get('name')?.touched">Bạn không thể bỏ trống name</span>
+            <span class="text-red-500" *ngIf="productForm.get('name')?.hasError('minlength') && productForm.get('name')?.touched">Bạn phải nhập tối thiểu 3 ký tự</span>
             <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
               
             </span>
@@ -35,32 +33,33 @@
         </div>
   
         <div>
-          <label for="price" class="sr-only">Price</label>
+          <label for="desc" class="sr-only">Desc</label>
   
           <div class="relative">
-            <input
-              type="price" formControlName="price"
+            <input formControlName="desc"
+              type="text"
               class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-              placeholder="Enter price"
+              placeholder="Enter desc "
             />
-  
+            <span class="text-red-500" *ngIf="productForm.get('desc')?.hasError('required') && productForm.get('desc')?.touched">Bạn không thể bỏ trống des</span>
+            <span class="text-red-500" *ngIf="productForm.get('desc')?.hasError('minlength') && productForm.get('desc')?.touched">Bạn phải nhập tối thiểu 3 ký tự</span>
             <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
-            
+             
             </span>
           </div>
         </div>
 
-
         <div>
-          <label for="desc" class="sr-only">desc</label>
+          <label for="price" class="sr-only">Price</label>
   
           <div class="relative">
-            <input formControlName="desc"
-              type="name"
+            <input formControlName="price"
+              type="price"
               class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-              placeholder="Enter name"
+              placeholder="Enter price"
             />
-  
+            <span class="text-red-500" *ngIf="productForm.get('price')?.hasError('required') && productForm.get('price')?.touched">Bạn không thể bỏ trống price</span>
+            <span class="text-red-500" *ngIf="productForm.get('price')?.hasError('minlength') && productForm.get('price')?.touched">Bạn phải nhập tối thiểu 3 ký tự</span>
             <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
              
             </span>
@@ -71,12 +70,12 @@
             <label for="images" class="sr-only">Image</label>
     
             <div class="relative">
-              <input
-                type="text" formControlName="img"
+              <input formControlName="img"
+                type="text"
                 class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                 placeholder="Enter images "
               />
-    
+              <span class="text-red-500" *ngIf="productForm.get('img')?.hasError('required') && productForm.get('img')?.touched">Bạn không thể bỏ trống img</span>
               <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
                
               </span>
